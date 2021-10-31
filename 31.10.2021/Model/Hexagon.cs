@@ -4,7 +4,6 @@ namespace _31._10._2021.Model
 {
     public class Hexagon :Shape
     {
-        public double SideA;
 
         public Hexagon(double sideA)
         {

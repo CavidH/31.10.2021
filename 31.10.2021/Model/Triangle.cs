@@ -4,7 +4,6 @@ namespace _31._10._2021.Model
 {
     public class Triangle: Shape
     {
-        public double SideA;
         public double SideB;
         public double SideC;
         public double Heron;

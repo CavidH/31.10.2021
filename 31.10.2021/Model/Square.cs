@@ -2,7 +2,6 @@
 {
     public class Square :Shape
     {
-        public double SideA;
 
         public Square(double sideA)
         {

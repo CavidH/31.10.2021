@@ -1,20 +1,51 @@
 ﻿using System;
 using System.Linq.Expressions;
+using System.Threading;
 using _31._10._2021.Model;
 
 namespace _31._10._2021
 {
     class Program
     {
-        public static int input;
+        public static int Input;
 
         static void Main(string[] args)
         {
+            Console.WriteLine("Hello");
+            Menu();
+            İnputOperation();
+            Again();
+        }
 
-            menu();
+        private static void Again()
+        {
+            double Answer=PrintAndReturnInput("continue or okay \n" +
+                                "1-continue \n" +
+                                "2-okay");
+            if (Answer==1)
+            {
+             Menu();   
+            }
+            else
+            {
+                Console.WriteLine("bye bye");
+                Thread.Sleep(2000);
+            }
+            
+        }
 
+        private static void MenuCheck()
+        {
+            if (Input<=0 || Input >5)
+            {
+                Console.WriteLine("such an option does not exist");
+                Menu();
+            }
+        }
 
-            switch (input)
+        private static void İnputOperation()
+        {
+            switch (Input)
             {
                 case 1:
                     double InputRecA = PrintAndReturnInput("please insert side a");
@@ -50,32 +81,34 @@ namespace _31._10._2021
                     Console.WriteLine("area:" + hexagon.GetArea());
                     Console.WriteLine("perimeter:" + hexagon.GetPerimeter());
                     break;
+                default:
+                    Console.WriteLine("such an option does not exist");
+                    break;
 
 
             }
-
         }
 
-        public static void menu()
+        public static void Menu()
         {
-            Console.WriteLine("Hello");
-            Console.WriteLine("Please Select number ");
-            Console.WriteLine("1-Rectangle " +
-                              "2-Triangle " +
-                              "3-Square" +
-                              "4-Circle" +
-                              "5-Hexagon ");
+            Console.WriteLine("Please Select number of shape \n");
+            Console.WriteLine("1-Rectangle \n" +
+                              "2-Triangle \n" +
+                              "3-Square \n" +
+                              "4-Circle \n" +
+                              "5-Hexagon \n");
             string InputString = Console.ReadLine();
 
             try
             {
-                input = Convert.ToInt32(InputString);
+                Input = Convert.ToInt32(InputString);
             }
             catch (Exception)
             {
-                Console.WriteLine("Duzgun formatda daxil edin");
-                throw;
+                Console.WriteLine("enter in the correct format");
+
             }
+            MenuCheck();
 
         }
 
