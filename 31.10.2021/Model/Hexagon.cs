@@ -10,6 +10,7 @@ namespace _31._10._2021.Model
         {
             SideA = sideA;
         }
+       
 
         public override double GetArea()
         {

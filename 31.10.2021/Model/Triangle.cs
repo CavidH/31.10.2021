@@ -4,14 +4,28 @@ namespace _31._10._2021.Model
 {
     public class Triangle: Shape
     {
+        public double SideA;
+        public double SideB;
+        public double SideC;
+        public double Heron;
+
+        public Triangle(double sideA, double sideB, double sideC)
+        {
+            SideA = sideA;
+            SideB = sideB;
+            SideC = sideC;
+        }
+
         public override double GetArea( )
         {
-            throw new System.NotImplementedException();
+            Heron = (SideA + SideB + SideC) / 2;
+            return Math.Sqrt(Heron * (Heron - SideA) * (Heron - SideB) * (Heron - SideC));
+
         }
 
         public override double GetPerimeter( )
         {
-            throw new System.NotImplementedException();
+            return SideA + SideB + SideC;
         }
     }
 }

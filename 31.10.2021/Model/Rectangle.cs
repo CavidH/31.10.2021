@@ -6,6 +6,7 @@ namespace _31._10._2021.Model
     {
         public double SideA;
         public double SideB;
+
         public override double GetArea( )
         {
             return SideA * SideB;

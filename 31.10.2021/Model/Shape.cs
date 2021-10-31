@@ -9,6 +9,6 @@ namespace _31._10._2021.Model
     {
         public abstract double GetArea();
         public abstract double GetPerimeter();
-     
+
     }
 }
